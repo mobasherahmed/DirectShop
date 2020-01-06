@@ -1,0 +1,16 @@
+.list-group-item:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.671);
+    transition: 1s all ease-in-out;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    color: red !important;
+}
+.list-group-item{
+color: crimson;
+font-weight: bolder;
+}

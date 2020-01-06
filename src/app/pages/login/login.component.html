@@ -1,0 +1,96 @@
+<app-header></app-header>
+
+<body>
+  <div class="container col-md-5">
+    <!----------- ----------- login Form ----------- ------->
+    <form class="my-5" *ngIf="!reg" id="login">
+      <div class="form" style="position: relative; left: 90%;">
+        <button (click)="regyes()" style="border-radius: 50%; height:70px;width:70px"
+          class="btn btn-danger mx-1">SignUp</button>
+      </div>
+      <div class="title p-2">
+        <h2 class="m-3 text-danger">Login</h2>
+      </div>
+
+      <div class="form-group mt-3">
+        <label>Email address</label>
+        <div class="alert alert-danger" role="alert" *ngIf="userError">
+          {{userError}}
+        </div>
+        <input #emailInput type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <div class="alert alert-danger" role="alert" *ngIf="passError">
+          {{passError}}
+        </div>
+        <input #passInput type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+      </div>
+      <button (click)="login(emailInput.value , passInput.value)" class="btn btn-danger">LogIn</button>
+
+
+    </form>
+
+    <!---------  ---- Register Form -----  -------------->
+    <form class="my-5"  *ngIf="reg" id="register">
+      <div class="register">
+        <div class="form" style="position: relative; left: 90%;">
+          <button (click)="noreg()" style="border-radius: 50%; height:70px;width:70px"
+            class="btn btn-danger mx-1">Login</button>
+        </div>
+        <div class="title p-2">
+          <h2 class="m-3 text-danger">Sign Up</h2>
+        </div>
+        <div class="d-flex mt-3">
+          <div class="form-group">
+            <label >First Name</label>
+            <input #first type="text" class="form-control" >
+          </div>
+          <div class="form-group ml-5">
+            <label >Last Name</label>
+            <input #last type="text" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <label>Email address</label>
+          <div class="alert alert-danger" role="alert" *ngIf="userError">
+            {{userError}}
+          </div>
+          <input #emailInput type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label >Password</label>
+          <div class="alert alert-danger" role="alert" *ngIf="passError">
+            {{passError}}
+          </div>
+          <input #passInput type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+          <label >Rewrite Password</label>
+          <div class="alert alert-danger" role="alert" *ngIf="passError">
+            {{passError}}
+          </div>
+          <input #passInput type="password" class="form-control" >
+        </div>
+        <div class="form-group">
+          <label>Your Avatar</label>
+          <input #img type="file" name="" id="" class="form-control" accept="image/jpg,png">
+        </div>
+      </div>
+
+      <button (click)="register(first.value,last.value,emailInput.value,passInput.value,img.value)" 
+      class="btn btn-danger">Sign Up</button>
+
+    </form>
+  </div>
+
+
+</body>

@@ -1,0 +1,23 @@
+.cartd-item{
+    background-color: #ccc !important;
+    padding: 15px !important;
+
+}
+.card-item img{
+    width: 100px !important;
+    height: 100px !important;
+}
+.card-item > span{
+    color: red !important;
+    margin: 0 5px !important;
+}
+.card-item span:nth-child(2){
+    color: blue !important;
+    
+}
+
+form{
+    background-color: #ccc;
+    padding: 20px;
+    margin: 1vh auto;
+}

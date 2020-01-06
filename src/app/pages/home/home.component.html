@@ -1,0 +1,32 @@
+<div class="container">
+
+
+    <!-- <button (click)="login()" class="btn btn-success">LogIn</button>
+    <button (click)="logout()" class="btn btn-danger mx-1">LogOut</button>
+    
+    <button (click)="getUsers()" class="btn btn-primary mx-1">getUsers</button>
+    
+    <div *ngFor="let item of items">
+    <h1>{{item.first_name}} {{item.last_name}}</h1>
+    <p>{{item.email}}</p>
+    <img src="{{item.avatar}}" alt="">
+    </div>
+  -->
+
+    <div class="row">
+        <div class="col-md-3">
+            <app-categories-list></app-categories-list>
+        </div>
+        <div class="col-md-9">
+            <app-slider></app-slider>
+        </div>
+    </div>
+
+
+
+
+    <app-product-list></app-product-list>
+    
+</div>
+
+<app-footer></app-footer>

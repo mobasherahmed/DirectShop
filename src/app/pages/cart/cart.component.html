@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row" *ngIf="empty">
+    <div class="title text-center my-5">
+      <h1>Your Cart Conatins this Products</h1>
+    </div>
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Img</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price </th>
+          <th scope="col">Delete from Your Cart</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items,index as i">
+
+          <th scope="row">{{i+1}}</th>
+          <td><img src="{{item.img}}" style="width: 100px;height: 100px;"></td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price | currency }}</td>
+          <td><button class="btn btn-danger" (click)="deleteItem(item , total)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-danger col-md-12" role="alert" >
+     All You Will Paid  =  {{total | currency}}
+    </div>
+    <br>
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <label for="name" class="col-md-4">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="Name" class="col-md-7">
+
+      <br>
+
+      <label for="address" class="col-md-4">
+        Address
+      </label>
+      <input id="address" type="text" formControlName="Address" class="col-md-7">
+      <br>
+      <label for="address" class="col-md-4">
+        Phone
+      </label>
+      <input id="address" type="text" formControlName="Phone" class="col-md-7">
+      <br>
+      <label for="address" class="col-md-4">
+        Visa
+      </label>
+      <input id="address" type="text" formControlName="VisaCart" class="col-md-7">
+      <br>
+      <button class="btn btn-primary my-3" type="submit" >Purchase</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+<div class="empty" *ngIf="!empty">
+  <div class="container text-center my-5">
+    <h2>There aren't any Products in your Cart yet </h2>
+    <h3><a routerLink="/products">You Can Show Our Products From Here</a></h3>
+  </div>
+</div>

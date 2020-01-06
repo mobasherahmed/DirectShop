@@ -1,0 +1,57 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="col-md-8 mx-3" >
+            <div class="card mb-4 shadow-sm">
+                <img src="{{product.img}}" alt="">
+                <div class="card-body">
+                    <h2 class="card-text">{{product.name}}</h2>
+                    <p class="card-text">{{product.desc}}</p>
+                    <p class="card-text">{{product.created_at | date}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="text-center"> 
+                            <a>
+                                <button type="button" class="btn btn-danger mx-1" (click)="addToCart(product)">ADD to
+                                    Cart</button>
+                            </a>
+                        </div>
+                        <p class="text-success">{{product.price}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="title">
+            
+            <h2>Comments</h2>
+        </div>
+        <div class="comments my-5" style="background-color: #cccccc; padding: 20px;">
+            <div class="d-flex" *ngFor="let comment of comments">
+                <img class="col-md-2" src="{{comment.img}}" alt="" style="width: 100px;height: 100px;margin: 10px 0;">
+                <h4 class="col-md-2 m-3">{{comment.name}}</h4>
+                <p class="col-md-6" style="background-color: white;padding:10px;border-radius:5px;height:70px;">{{comment.body}}</p>
+            </div>
+        </div>
+
+        <form class="form-group" action="">
+            <h2>Leave A Comment</h2>
+
+            <label for="">Title</label>
+            <input type="text" class="form-control"><br>
+
+            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor><br>
+
+            <input type="file" class="form-control "><br>
+
+            <button class="btn btn-success">Comment</button>
+        </form>
+        
+
+
+    </div>
+
+
+
+</div>
+
+

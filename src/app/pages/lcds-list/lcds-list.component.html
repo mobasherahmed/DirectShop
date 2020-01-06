@@ -1,0 +1,42 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+  
+      <div class="row">
+  
+        <div class="col-md-4" *ngFor="let product of products">
+          <div class="card mb-4 shadow-sm" > 
+            <img src="{{product.img}}" alt="">
+            <div class="card-body">
+              <h2 class="card-text">
+                <a [title]="product.name + ' details ' "
+                   routerLink="/product/{{product.id}}">
+                  {{product.name}}
+                </a> 
+             </h2>
+             <p class="text-success">{{product.price |currency}}</p>
+              <p class="card-text">{{product.desc}}</p>
+              <div class="d-flex justify-content-between align-items-center"> 
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success" (click)="goToProduct(product.id)" >View</button>
+                  <button type="button" class="btn btn-danger mx-3" (click)="addTocart(product)" >ADD To Cart</button>
+                </div>
+                
+              </div>
+            </div> 
+          </div>
+        </div>
+  
+  
+      </div>
+  
+      <div class="text-center">
+        <button 
+        class="btn btn-info" 
+        (click)="loadMore()"
+        [disabled] = "!allAvilable" >
+        LoadMoreProducts
+      </button>
+       
+      </div>
+    </div>
+  </div>
