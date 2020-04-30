@@ -23,7 +23,7 @@
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
     "@nguniversal/express-engine": "^8.2.6",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "material-design-icons": "^3.0.1",
     "ngx-owl-carousel-o": "^2.0.3",
     "rxjs": "~6.4.0",
